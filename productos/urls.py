@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     url('^$', views.index),
-    url(r'^measurements/', views.MeasurementList),
-    url(r'^measurementcreate/$', csrf_exempt(views.MeasurementCreate), name='measurementCreate'),
+    url(r'^productos/', views.ProductoList),
+    url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
     url(r'^variables/', views.VariableList, name='variableList'),
     url(r'^variablecreate/$', csrf_exempt(views.VariableCreate), name='variableCreate'),
 ]

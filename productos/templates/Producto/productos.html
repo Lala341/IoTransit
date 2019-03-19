@@ -5,10 +5,10 @@
     <div class="">
         <div class="page-header-title">
             <h4 class="page-title">Last Ten Measures</h4>
-            <!--- 
+            <!---
             <div style="text-align:right;">
                 <button type="button" class="btn btn-success waves-effect waves-light"
-                        onClick=" window.location.href='/measurementcreate' " style="text-align:center;">+
+                        onClick=" window.location.href='/productocreate' " style="text-align:center;">+
                 </button>
             </div>
             --->
@@ -35,13 +35,13 @@
                         </thead>
                         <tbody>
 
-                        {% for measurement in measurement_list %}
+                        {% for producto in producto_list %}
                         <tr>
-                            <td>{{ measurement.variable.name }}</td>
-                            <td>{{ measurement.value }}</td>
-                            <td>{{ measurement.unit }}</td>
-                            <td>{{ measurement.place }}</td>
-                            <td>{{ measurement.dateTime }}</td>
+                            <td>{{ producto.variable.name }}</td>
+                            <td>{{ producto.value }}</td>
+                            <td>{{ producto.unit }}</td>
+                            <td>{{ producto.place }}</td>
+                            <td>{{ producto.dateTime }}</td>
                         </tr>
                         {% endfor %}
 

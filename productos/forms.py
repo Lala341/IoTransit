@@ -1,9 +1,9 @@
 from django import forms
-from .models import Variable, Measurement
+from .models import Variable, Producto
 
-class MeasurementForm(forms.ModelForm):
+class ProductoForm(forms.ModelForm):
     class Meta:
-        model = Measurement
+        model = Producto
         fields = [
             'variable',
             'value',

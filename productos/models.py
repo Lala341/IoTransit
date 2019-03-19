@@ -8,7 +8,7 @@ class Variable(models.Model):
     def __str__(self):
         return '{}'.format(self.name)
 
-class Measurement(models.Model):
+class Producto(models.Model):
     variable = models.ForeignKey(Variable, on_delete=models.CASCADE)
     value = models.FloatField(null=True, blank=True, default=None)
     unit = models.CharField(max_length=50)

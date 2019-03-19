@@ -1,6 +1,6 @@
 from django.contrib import admin
-from . models import Measurement, Variable
+from . models import Producto, Variable
 
 # Register your models here.
-admin.site.register(Measurement)
+admin.site.register(Producto)
 admin.site.register(Variable)
