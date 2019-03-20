@@ -19,8 +19,8 @@ class MonitoringRouter(object):
 
     def db_for_read(self, model, **hints):
 
-        return 'default'
+        return 'local'
 
     def db_for_write(self, model, **hints):
 
-        return 'default'
+        return 'local'
