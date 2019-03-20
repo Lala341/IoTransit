@@ -36,15 +36,15 @@ def ProductoCreate(request):
     return render(request, 'Producto/productoCreate.html', context)
 
 def ProductoUpdate(request,pk):
-    prodbus= Producto.objects.get(id=pk)
+    producto= Producto.objects.get(id=pk)
     if request.method == 'GET':
-        form= ProductoForm(instance=prodbus)
+        form= ProductoForm(instance=producto)
     else:
-        form= ProductoForm(request.POST, instance=prodbus)
+        form= ProductoForm(request.POST, instance=producto)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Producto update successful')
-            return redirect('prodbus:ProductoList')
+            return redirect('producto:ProductoList')
 
     context = {
         'form': form,
