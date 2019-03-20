@@ -33,13 +33,13 @@ class VentaForm(forms.ModelForm):
         fields = [
             'id',
             'producto',
-            'dateTime',
+            #'dateTime',
         ]
 
         labels = {
             'id' : 'Id',
             'producto' : 'Producto',
-            'dateTime' : 'Date Time',
+            #'dateTime' : 'Date Time',
         }
 
 class VariableForm(forms.ModelForm):
