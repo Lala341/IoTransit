@@ -1,5 +1,5 @@
 from django import forms
-from .models import Variable, Producto, Venta
+from .models import Producto, Venta
 
 class ProductoForm(forms.ModelForm):
     class Meta:
