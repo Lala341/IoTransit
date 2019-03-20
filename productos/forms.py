@@ -5,18 +5,25 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
         fields = [
-            'variable',
-            'value',
-            'unit',
-            'place',
+            'id',
+            'nombre',
+            'cantidad',
+            'valor',
+            'unidad',
+            'tipo',
+
             #'dateTime',
         ]
 
         labels = {
-            'variable' : 'Variable',
-            'value' : 'Value',
-            'unit' : 'Unit',
-            'place' : 'Place',
+
+        'id' : 'Id',
+        'nombre': 'Nombre',
+        'cantidad': 'Cantidad',
+        'valor':'Valor',
+        'unidad':'Unidad',
+        'tipo':'Tipo',
+
             #'dateTime' : 'Date Time',
         }
 
