@@ -82,8 +82,14 @@ DATABASES = {
         'PASSWORD': 'isis2503',
         'HOST': 'localhost',
         'PORT': '',
+    },
+    'local': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'baseDatosRecovery',
     }
 }
+
+DATABASE_ROUTERS = ['monitoring.routers.MonitoringRouter',]
 
 
 # Password validation
