@@ -16,4 +16,4 @@ class Producto(models.Model):
     tipo = models.CharField(max_length=50)
 
     def __str__(self):
-        return '%s %s' % (self.value, self.unit)
+        return '%s %s' % (self.nombre, self.tipo)
