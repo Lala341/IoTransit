@@ -40,10 +40,10 @@ def ProductoUpdate(request,pk):
     if request.method == 'GET':
         form= ProductoForm(instance=prodbus)
     else:
-        form= ProductoForm(request.POST, instance=prodbus)
+        form= ProductoForm(request.PUT, instance=prodbus)
         if form.is_valid():
             form.save()
-            
+
             messages.add_message(request, messages.SUCCESS, 'Producto update successful')
             return HttpResponseRedirect(reverse('productoUpdate'))
         else:
