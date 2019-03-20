@@ -8,7 +8,7 @@ urlpatterns = [
     url('^$', views.index),
     url(r'^productos/', views.ProductoList),
     url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
-    url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='ProductoUpdate'),
+    url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
     url(r'^ventas/', views.VentaList),
     url(r'^ventacreate/$', csrf_exempt(views.VentaCreate), name='ventaCreate'),
     url(r'^variables/', views.VariableList, name='variableList'),

@@ -43,7 +43,6 @@ def ProductoUpdate(request,pk):
         form= ProductoForm(request.POST, instance=prodbus)
         if form.is_valid():
             form.save()
-
             messages.add_message(request, messages.SUCCESS, 'Producto update successful')
             return HttpResponseRedirect(reverse('productoUpdate'))
         else:
