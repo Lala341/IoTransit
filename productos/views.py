@@ -48,8 +48,6 @@ def ProductoUpdate(request,pk):
             return HttpResponseRedirect(reverse('productoUpdate'))
         else:
             print(form.errors)
-    else:
-        form = ProductoForm()
 
     context = {
         'form': form,
