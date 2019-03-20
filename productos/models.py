@@ -9,11 +9,11 @@ class Variable(models.Model):
         return '{}'.format(self.name)
 
 class Producto(models.Model):
-    nombre = models.TextField()
+    nombre = models.TextField(default='DEFAULT VALUE')
     cantidad = models.FloatField(null=True, blank=True, default=None)
     valor = models.FloatField(null=True, blank=True, default=None)
-    unidad = models.CharField(max_length=50, default="gramos")
-    tipo = models.CharField(max_length=50, default="ABARROTES")
+    unidad = models.CharField(max_length=50, default='DEFAULT VALUE')
+    tipo = models.CharField(max_length=50, default='DEFAULT VALUE')
 
     def __str__(self):
         return '%s %s' % (self.nombre, self.tipo)
