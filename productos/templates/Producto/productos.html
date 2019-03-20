@@ -31,6 +31,11 @@
                             <th>Valor</th>
                             <th>Unidad</th>
                             <th>Tipo</th>
+                            <th>
+
+
+                            </th>
+
                         </tr>
                         </thead>
                         <tbody>
@@ -42,6 +47,15 @@
                             <td>{{ producto.valor }}</td>
                             <td>{{ producto.unidad }}</td>
                             <td>{{ producto.tipo }}</td>
+                            <td>
+                              <div style="text-align:right;">
+                                  <button type="button" class="btn btn-success waves-effect waves-light"
+                                          onClick=" window.location.href='/productoupdate/producto.id' " style="text-align:center;">+
+                                  </button>
+                              </div>
+
+                            </td>
+
                         </tr>
                         {% endfor %}
 

@@ -1,4 +1,4 @@
-from .models import Producto, Venta, Variable 
+from .models import Producto, Venta, Variable
 from django.shortcuts import render, redirect
 from .forms import VariableForm, ProductoForm, VentaForm
 from django.contrib import messages
@@ -34,6 +34,28 @@ def ProductoCreate(request):
     }
 
     return render(request, 'Producto/productoCreate.html', context)
+
+def ProductoUpdate(request,pk):
+    prodbus= Producto.objects.get(id=pk)
+    if request.method == 'GET':
+        form= ProductoForm(instance=prodbus)
+    else:
+        form= ProductoForm(request.POST, instance=prodbus)
+        if form.is_valid():
+            producto = form.save()
+            producto.save()
+            messages.add_message(request, messages.SUCCESS, 'Producto update successful')
+            return HttpResponseRedirect(reverse('productoUpdate'))
+        else:
+            print(form.errors)
+    else:
+        form = ProductoForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'Producto/productoUpdate.html', context)
 
 def VentaList(request):
     queryset = Venta.objects.all().order_by('-dateTime')[:10]
