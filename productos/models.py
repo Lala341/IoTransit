@@ -9,7 +9,7 @@ class Variable(models.Model):
         return '{}'.format(self.name)
 
 class Producto(models.Model):
-    nombre = models.TextField(default='DEFAULT VALUE')
+    nombre = models.CharField(max_length=100, default='DEFAULT VALUE')
     cantidad = models.FloatField(null=True, blank=True, default=None)
     valor = models.FloatField(null=True, blank=True, default=None)
     unidad = models.CharField(max_length=50, default='DEFAULT VALUE')
