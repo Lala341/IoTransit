@@ -41,13 +41,3 @@ class VentaForm(forms.ModelForm):
             'producto' : 'Producto',
             #'dateTime' : 'Date Time',
         }
-
-class VariableForm(forms.ModelForm):
-    class Meta:
-        model = Variable
-        fields = [
-            'name',
-        ]
-        labels = {
-            'name': 'Name',
-        }

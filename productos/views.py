@@ -1,6 +1,6 @@
-from .models import Producto, Venta, Variable
+from .models import Producto, Venta
 from django.shortcuts import render, redirect
-from .forms import VariableForm, ProductoForm, VentaForm
+from .forms import  ProductoForm, VentaForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -23,7 +23,7 @@ def ProductoCreate(request):
             producto = form.save()
             producto.save()
             messages.add_message(request, messages.SUCCESS, 'Producto create successful')
-            return HttpResponseRedirect(reverse('productoCreate'))
+            return HttpResponseRedirect(reverse('productoList'))
         else:
             print(form.errors)
     else:
@@ -77,29 +77,3 @@ def VentaCreate(request):
     }
 
     return render(request, 'Venta/ventaCreate.html', context)
-
-def VariableList(request):
-    queryset = Variable.objects.all()
-    context = {
-        'variable_list': queryset
-    }
-    return render(request, 'Variable/variables.html', context)
-
-def VariableCreate(request):
-    if request.method == 'POST':
-        form = VariableForm(request.POST)
-        if form.is_valid():
-            producto = form.save()
-            producto.save()
-            messages.add_message(request, messages.SUCCESS, 'Variable create successful')
-            return HttpResponseRedirect(reverse('variableCreate'))
-        else:
-            print(form.errors)
-    else:
-        form = VariableForm()
-
-    context = {
-        'form': form,
-    }
-
-    return render(request, 'Variable/variableCreate.html', context)
