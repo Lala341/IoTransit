@@ -28,6 +28,4 @@ class MonitoringRouter(object):
             return 'default'
         return 'local'
 
-    def allow_syncdb(self, db, model):
-        "Make sure only the default db allows syncdb"
-        return db == 'default'
+    
