@@ -12,7 +12,7 @@ class ProductoForm(forms.ModelForm):
             'unidad',
             'tipo',
 
-            #'dateTime',
+
         ]
 
         labels = {
@@ -24,7 +24,7 @@ class ProductoForm(forms.ModelForm):
         'unidad':'Unidad',
         'tipo':'Tipo',
 
-            #'dateTime' : 'Date Time',
+
         }
 
 class VariableForm(forms.ModelForm):

@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'index.html')
 
 def ProductoList(request):
-    queryset = Producto.objects.all().order_by('-dateTime')[:10]
+    queryset = Producto.objects.all()
     context = {
         'producto_list': queryset
     }
