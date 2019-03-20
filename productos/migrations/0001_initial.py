@@ -29,9 +29,21 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=50)),
             ],
         ),
+        migrations.CreateModel(
+            name='Venta',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('dateTime', odels.DateTimeField(auto_now_add=True),
+            ],
+        ),
         migrations.AddField(
             model_name='producto',
             name='variable',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='productos.Variable'),
+        ),
+        migrations.AddField(
+            model_name='venta',
+            name='producto',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='ventas.Producto'),
         ),
     ]

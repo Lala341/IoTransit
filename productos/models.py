@@ -19,7 +19,6 @@ class Producto(models.Model):
         return '%s %s' % (self.nombre, self.tipo)
 
 class Venta(models.Model):
-    id = models.FloatField(null=True, blank=True, default=None)
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     dateTime = models.DateTimeField(auto_now_add=True)
 
