@@ -1,4 +1,4 @@
-from .models import Producto, Venta, Variable, 
+from .models import Producto, Venta, Variable 
 from django.shortcuts import render, redirect
 from .forms import VariableForm, ProductoForm, VentaForm
 from django.contrib import messages
