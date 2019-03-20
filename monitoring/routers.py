@@ -5,6 +5,7 @@ import socket
 def test_connection_to_db(database_name):
     try:
         db_definition = getattr(settings, 'DATABASES')[database_name]
+        print(db_definition['HOST'])
         s = socket.create_connection((db_definition['HOST'], db_definition['PORT']), 5)
         s.close()
         return True

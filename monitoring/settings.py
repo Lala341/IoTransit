@@ -85,7 +85,7 @@ DATABASES = {
     },
     'local': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'baseDatosRecovery',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
