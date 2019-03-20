@@ -1,5 +1,5 @@
 from django import forms
-from .models import Variable, Producto
+from .models import Variable, Producto, Venta
 
 class ProductoForm(forms.ModelForm):
     class Meta:
@@ -25,6 +25,21 @@ class ProductoForm(forms.ModelForm):
         'tipo':'Tipo',
 
 
+        }
+
+class VentaForm(forms.ModelForm):
+    class Meta:
+        model = Venta
+        fields = [
+            'id',
+            'producto',
+            'dateTime',
+        ]
+
+        labels = {
+            'id' : 'Id',
+            'producto' : 'Producto',
+            'dateTime' : 'Date Time',
         }
 
 class VariableForm(forms.ModelForm):
