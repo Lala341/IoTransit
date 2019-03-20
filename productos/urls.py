@@ -6,7 +6,7 @@ from . import views
 
 urlpatterns = [
     url('^$', views.index),
-    url(r'^productos/', views.ProductoList),
+    url(r'^productos/', views.ProductoList,name='productoList'),
     url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
     url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
     url(r'^ventas/', views.VentaList),

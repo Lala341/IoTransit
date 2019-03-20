@@ -44,7 +44,7 @@ def ProductoUpdate(request,pk):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, 'Producto update successful')
-            return HttpResponseRedirect(reverse('ProductoList/'))
+            return HttpResponseRedirect(reverse('productoList'))
 
     context = {
         'form': form,
