@@ -11,16 +11,14 @@ from django.http import HttpResponse
 def index(request):
     template = 'index.html'
     results = Producto.objects.all()
-    jsondata = serializers.serialize('json', results)
     context = {
         'results': results,
-        'jsondata': jsondata,
+
 	}
     return render(request, template, context)
 
 def getdata(request):
     results = Producto.objects.all()
-    jsondata = serializers.serialize('json', results)
     return HttpResponse(jsondata )
 
 def base_layout(request):
