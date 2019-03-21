@@ -5,13 +5,11 @@
     <div class="">
         <div class="page-header-title">
             <h4 class="page-title">Ventas</h4>
-
             <div style="text-align:right;">
                 <button type="button" class="btn btn-success waves-effect waves-light"
                         onClick=" window.location.href='/ventacreate' " style="text-align:center;">+
                 </button>
             </div>
-
         </div>
     </div>
 
@@ -23,19 +21,18 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
+
                     <table class="table table-hover">
                         <thead>
                         <tr style="color:#0E2EB0">
-                            <th>Producto</th>
-                            <th>Date Time</th>
+                            <th>Venta</th>
                         </tr>
                         </thead>
                         <tbody>
 
                         {% for venta in venta_list %}
                         <tr>
-                            <td>{{ venta.producto.nombre }}</td>
-                            <td>{{ venta.dateTime }}</td>
+                            <th>{{ venta.producto.nombre }}</th>
                         </tr>
                         {% endfor %}
 
@@ -54,5 +51,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
