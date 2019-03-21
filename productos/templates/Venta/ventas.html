@@ -27,7 +27,7 @@
                         <thead>
                         <tr style="color:#0E2EB0">
                             <th>Producto</th>
-                            <th>Date Time</th>
+                            <th>Nombre</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@
                         {% for venta in venta_list %}
                         <tr>
                             <td>{{ venta.producto.nombre }}</td>
-                            <td>{{ venta.dateTime }}</td>
+                            <td>{{ venta.name }}</td>
                         </tr>
                         {% endfor %}
 

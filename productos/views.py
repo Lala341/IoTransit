@@ -52,20 +52,13 @@ def ProductoUpdate(request,pk):
 
     return render(request, 'Producto/productoUpdate.html', context)
 
-def VentaList(request):
-    queryset = Venta.objects.all().order_by('-dateTime')[:10]
-    context = {
-        'venta_list': queryset
-    }
-    return render(request, 'Venta/ventas.html', context)
-
 def VentaCreate(request):
     if request.method == 'POST':
-        form = ProductoForm(request.POST)
+        form = VentaForm(request.POST)
         if form.is_valid():
-            venta = form.save()
-            venta.save()
-            messages.add_message(request, messages.SUCCESS, 'Venta creada con exito')
+            producto = form.save()
+            producto.save()
+            messages.add_message(request, messages.SUCCESS, 'Venta create successful')
             return HttpResponseRedirect(reverse('ventaCreate'))
         else:
             print(form.errors)
