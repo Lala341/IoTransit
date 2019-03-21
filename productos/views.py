@@ -2,29 +2,30 @@ from .models import Producto, Venta
 from django.shortcuts import render, redirect
 from .forms import  ProductoForm, VentaForm
 from django.contrib import messages
+from django.core import serializers
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.http import HttpResponse
 
 
 def index(request):
-    template='index.html'
-	results= feed.objects.all()
-    jsondata = serializers.serialize('json',results)
-    context={
-        'results':results,
-        'jsondata':jsondata,
+    template = 'index.html'
+    results = Producto.objects.all()
+    jsondata = serializers.serialize('json', results)
+    context = {
+        'results': results,
+        'jsondata': jsondata,
 	}
-    return render(request,template,context)
-
+    return render(request, template, context)
 
 def getdata(request):
-	results=feed.objects.all()
-	jsondata = serializers.serialize('json',results)
-	return HttpResponse(jsondata)
+    results = Producto.objects.all()
+    jsondata = serializers.serialize('json', results)
+    return HttpResponse(jsondata )
 
 def base_layout(request):
-	template='base.html'
-	return render(request,template)
+    template='base.html'
+    return render(request, template)
 
 def ProductoList(request):
     queryset = Producto.objects.all()
