@@ -15,7 +15,7 @@ def getdata(request):
 	return HttpResponse(jsondata)
 
 def base_layout(request):
-	template='templates/base.html'
+	template='base.html'
 	return render(request,template)
 
 def ProductoList(request):
