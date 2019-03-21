@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     url('^$', views.index),
-    path(r'base_layout',views.base_layout,name='base_layout'),
-    path(r'getdata',views.getdata,name='getdata'),
+    url(r'base_layout',views.base_layout,name='base_layout'),
+    url(r'getdata',views.getdata,name='getdata'),
     url(r'^productos/', views.ProductoList,name='productoList'),
     url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
     url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
