@@ -9,6 +9,15 @@ from django.urls import reverse
 def index(request):
     return render(request, 'index.html')
 
+def getdata(request):
+	results=feed.objects.all()
+	jsondata = serializers.serialize('json',results)
+	return HttpResponse(jsondata)
+
+def base_layout(request):
+	template='templates/base.html'
+	return render(request,template)
+
 def ProductoList(request):
     queryset = Producto.objects.all()
     context = {
@@ -77,3 +86,7 @@ def VentaCreate(request):
     }
 
     return render(request, 'Venta/ventaCreate.html', context)
+
+def base_layout(request):
+	template='productos/base.html'
+	return render(request,template)
