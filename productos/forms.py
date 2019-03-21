@@ -33,7 +33,6 @@ class VentaForm(forms.ModelForm):
         fields = [
             'producto',
         ]
-
         labels = {
             'producto' : 'Producto',
         }
