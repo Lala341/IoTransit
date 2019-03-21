@@ -31,13 +31,9 @@ class VentaForm(forms.ModelForm):
     class Meta:
         model = Venta
         fields = [
-            'id',
             'producto',
-            #'dateTime',
         ]
 
         labels = {
-            'id' : 'Id',
             'producto' : 'Producto',
-            #'dateTime' : 'Date Time',
         }
