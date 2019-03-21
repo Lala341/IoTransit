@@ -7,7 +7,15 @@ from django.urls import reverse
 
 
 def index(request):
-    return render(request, 'index.html')
+    template='/index.html'
+	results=feed.objects.all()
+	jsondata = serializers.serialize('json',results)
+	context={
+		'results':results,
+		'jsondata':jsondata,
+	}
+	return render(request,template,context)
+
 
 def getdata(request):
 	results=feed.objects.all()
