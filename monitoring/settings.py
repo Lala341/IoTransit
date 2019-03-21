@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'productos',
     'pwa',
+    'productos',
+
 ]
 
 MIDDLEWARE = [
@@ -97,18 +98,7 @@ DATABASES = {
 
 DATABASE_ROUTERS = ['monitoring.routers.MonitoringRouter',]
 
-PWA_APP_NAME = 'Monitoring'
-PWA_APP_DESCRIPTION = "App de ATpost"
-PWA_APP_THEME_COLOR = '#0A0302'
-PWA_APP_BACKGROUND_COLOR = '#ffffff'
-PWA_APP_DISPLAY = 'standalone'
-PWA_APP_START_URL = '/'
-PWA_APP_ICONS = [
-    {
-        'src': '/static/media/logo.png',
-        'sizes': '160x160'
-    }
-]
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
