@@ -16,7 +16,7 @@ from django.db import connections
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'monitoring/static/js', 'serviceworker.js')
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'productos/static/js', 'serviceworker.js')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
