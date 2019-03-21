@@ -5,12 +5,12 @@ from django.views.decorators.csrf import csrf_exempt
 from . import views
 
 urlpatterns = [
-    url(r'', views.index,name='index'),
-    url(r'base_layout',views.base_layout,name='base_layout'),
-    url(r'getdata',views.getdata,name='getdata'),
-    url(r'^productos/', views.ProductoList,name='productoList'),
-    url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
-    url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
-    url(r'^ventas/', views.VentaList),
-    url(r'^ventacreate/$', csrf_exempt(views.VentaCreate), name='ventaCreate'),
+    path(r'', views.index,name='index'),
+    path(r'base_layout',views.base_layout,name='base_layout'),
+    path(r'getdata',views.getdata,name='getdata'),
+    path(r'^productos/', views.ProductoList,name='productoList'),
+    path(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
+    path(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
+    path(r'^ventas/', views.VentaList),
+    path(r'^ventacreate/$', csrf_exempt(views.VentaCreate), name='ventaCreate'),
 ]
