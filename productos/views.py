@@ -56,8 +56,8 @@ def VentaCreate(request):
     if request.method == 'POST':
         form = VentaForm(request.POST)
         if form.is_valid():
-            producto = form.save()
-            producto.save()
+            venta = form.save()
+            venta.save()
             messages.add_message(request, messages.SUCCESS, 'Venta create successful')
             return HttpResponseRedirect(reverse('ventaCreate'))
         else:
