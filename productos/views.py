@@ -12,10 +12,7 @@ import json
 def index(request):
     template='index.html'
     ventas= Venta.objects.all()
-    results= Producto.objects.all()
-    jsondata1 = serializers.serialize('json',results)
-    jsondata2 = serializers.serialize('json',ventas)
-    jsondata= jsondata1.concat(jsondata2)
+    jsondata = serializers.serialize('json',ventas)
     context={
 		'results':results,
 		'jsondata':jsondata,
@@ -34,11 +31,8 @@ def productos(request):
 
 def getdata(request):
 
-    results=Producto.objects.all()
     ventas= Venta.objects.all()
-    jsondata1 = serializers.serialize('json',results)
-    jsondata2 = serializers.serialize('json',ventas)
-    jsondata= jsondata1.concat(jsondata2)
+    jsondata = serializers.serialize('json',ventas)
     return HttpResponse(jsondata)
 
 def base_layout(request):
