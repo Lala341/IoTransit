@@ -2,8 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-
-
 class Producto(models.Model):
     nombre = models.CharField(max_length=100, default='DEFAULT VALUE')
     cantidad = models.FloatField(null=True, blank=True, default=None)
@@ -16,7 +14,6 @@ class Producto(models.Model):
 
 class Venta(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    dateTime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return 'La venta fue con el producto: $'.format(self.producto)

@@ -53,7 +53,7 @@ def ProductoUpdate(request,pk):
     return render(request, 'Producto/productoUpdate.html', context)
 
 def VentaList(request):
-    queryset = Venta.objects.all().order_by('-dateTime')[:10]
+    queryset = Venta.objects.all()
     context = {
         'venta_list': queryset
     }

@@ -32,9 +32,7 @@ class VentaForm(forms.ModelForm):
         model = Venta
         fields = [
             'producto',
-            #'dateTime',
         ]
         labels = {
-            'producto' : 'Producto',
-            #'dateTime' : 'Date Time',
+            'producto': 'Producto',
         }
