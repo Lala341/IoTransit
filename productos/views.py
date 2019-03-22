@@ -18,6 +18,16 @@ def index(request):
 	}
 	return render(request,template,context)
 
+def productos(request):
+	template='Producto/productos.html'
+	results=Producto.objects.all()
+	jsondata = serializers.serialize('json',results)
+	context={
+		'results':results,
+		'jsondata':jsondata,
+	}
+	return render(request,template,context)
+
 def getdata(request):
 	results=Producto.objects.all()
 	jsondata = serializers.serialize('json',results)

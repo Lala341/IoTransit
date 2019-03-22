@@ -5,6 +5,7 @@ self.addEventListener('install', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/base_layout',
+        '/productos',
         '/static/js/idb.js',
         '/static/js/idbop.js'
 
