@@ -33,7 +33,7 @@ def productos(request):
 
 def getdata(request):
 	results=Producto.objects.all()
-    ventas=Venta.objects.all()
+    ventas= Venta.objects.all()
     jsondata1 = serializers.serialize('json',results)
     jsondata2 = serializers.serialize('json',ventas)
     jsondata= jsondata1.concat(jsondata2)
