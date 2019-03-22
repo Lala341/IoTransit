@@ -9,7 +9,7 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 	}).then(function(jsondata){
 		dbPromise.then(function(db){
 			var tx = db.transaction('productos', 'readwrite');
-	  		var feedsStore = tx.objectStore('feeds');
+	  		var feedsStore = tx.objectStore('productos');
 	  		for(var key in jsondata){
 	  			if (jsondata.hasOwnProperty(key)) {
 			    	feedsStore.put(jsondata[key]);
@@ -22,7 +22,7 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 	var post="";
 	dbPromise.then(function(db){
 		var tx = db.transaction('productos', 'readonly');
-  		var feedsStore = tx.objectStore('feeds');
+  		var feedsStore = tx.objectStore('productos');
   		return feedsStore.openCursor();
 	}).then(function logItems(cursor) {
 		  if (!cursor) {
