@@ -40,10 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pwa',
     'productos',
+    'pwa',
+
 
 ]
+PWA_APP_NAME  =  'productos'
+PWA_APP_DESCRIPTION  =  " Hacer COSAS TODO kickass el día sin ESE molesto cromo Navegador "
+PWA_APP_THEME_COLOR  =  ' #0A0302 '
+PWA_APP_BACKGROUND_COLOR  =  ' #ffffff '
+PWA_APP_DISPLAY  =  ' independientes '
+PWA_APP_START_URL  =  ' / '
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -88,16 +95,8 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '',
     },
-    'local': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'PASSWORD': 'isis2503',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
-DATABASE_ROUTERS = ['monitoring.routers.MonitoringRouter',]
+}
 
 
 # Password validation
