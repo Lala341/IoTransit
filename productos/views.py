@@ -9,9 +9,10 @@ from django.http import HttpResponse
 import json
 # Create your views here.
 def index(request):
+
 	template='index.html'
-	results= Producto.objects.all()
     ventas= Venta.objects.all()
+    results= Producto.objects.all()
     jsondata1 = serializers.serialize('json',results)
     jsondata2 = serializers.serialize('json',ventas)
     jsondata= jsondata1.concat(jsondata2)
