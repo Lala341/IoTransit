@@ -17,7 +17,7 @@ from django.db import connections
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'productos', 'serviceworker.js')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -40,16 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'productos',
-    
+    'pwa',
+
 
 
 ]
-PWA_APP_NAME  =  'productos'
-PWA_APP_DESCRIPTION  =  " Hacer COSAS TODO kickass el día sin ESE molesto cromo Navegador "
-PWA_APP_THEME_COLOR  =  ' #0A0302 '
-PWA_APP_BACKGROUND_COLOR  =  ' #ffffff '
-PWA_APP_DISPLAY  =  ' independientes '
-PWA_APP_START_URL  =  ' / '
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
