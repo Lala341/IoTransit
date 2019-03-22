@@ -5,7 +5,6 @@ self.addEventListener('install', function(event) {
     caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/base_layout',
-        '/productos',
         '/static/js/idb.js',
         '/static/js/idbop.js'
 
@@ -19,8 +18,7 @@ self.addEventListener('fetch', function(event) {
     if (requestUrl.origin === location.origin) {
       if ((requestUrl.pathname === '/')) {
         event.respondWith(caches.match('/base_layout'));
-        event.respondWith(caches.match('/productos'));
-
+      
         return;
       }
     }
