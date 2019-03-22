@@ -7,13 +7,14 @@ from django.urls import reverse
 from django.core import serializers
 from django.http import HttpResponse
 import json
-
 # Create your views here.
 def index(request):
 	template='index.html'
 	results=Producto.objects.all()
+	jsondata = serializers.serialize('json',results)
 	context={
 		'results':results,
+		'jsondata':jsondata,
 	}
 	return render(request,template,context)
 
