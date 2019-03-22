@@ -6,20 +6,19 @@
         <script>
         console.log('vamos1')
             // Initialize the service worker
-            if ('serviceworker' in navigator) {
-              console.log('vamos2')
-                navigator.serviceWorker.register('/serviceworker.js', {
-                    scope: '.' // <--- THIS BIT IS REQUIRED
-                }).then(function (registration) {
-                    // Registration was successful
-                    console.log('vamos3')
-                    console.log('django-progressive-web-app: ServiceWorker registration successful with scope: ', registration.scope);
-                }, function (err) {
-                    // registration failed :(
-                    console.log('vamos4')
-                    console.log('django-progressive-web-app: ServiceWorker registration failed: ', err);
-                });
-            }
+            if ('serviceWorker' in navigator) {
+            console.log('vamos2')
+            window.addEventListener('load', function() {
+            console.log('vamos3')
+              navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+                // Si es exitoso
+                console.log('SW registrado correctamente');
+              }, function(err) {
+                // Si falla
+                console.log('SW fallo', err);
+              });
+            });
+          }
         </script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
