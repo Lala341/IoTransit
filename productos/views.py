@@ -6,18 +6,19 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core import serializers
 from django.http import HttpResponse
-from . models import feed
+import json
+
 # Create your views here.
 def index(request):
 	template='index.html'
-	results=feed.objects.all()
+	results=Producto.objects.all()
 	context={
 		'results':results,
 	}
 	return render(request,template,context)
 
 def getdata(request):
-	results=feed.objects.all()
+	results=Producto.objects.all()
 	jsondata = serializers.serialize('json',results)
 	return HttpResponse(jsondata)
 
