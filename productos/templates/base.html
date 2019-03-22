@@ -6,7 +6,7 @@
         <script>
         console.log('vamos1')
             // Initialize the service worker
-            if ('serviceWorker' in navigator) {
+            if ('serviceworker' in navigator) {
               console.log('vamos2')
                 navigator.serviceWorker.register('/serviceworker.js', {
                     scope: '.' // <--- THIS BIT IS REQUIRED
