@@ -25,7 +25,8 @@
                     <table class="table table-hover">
                         <thead>
                         <tr style="color:#0E2EB0">
-                            <th>Venta</th>
+                            <th>Producto</th>
+                            <th>Fecha</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,6 +34,7 @@
                         {% for venta in venta_list %}
                         <tr>
                             <th>{{ venta.producto.nombre }}</th>
+                            <th>{{ venta.fecha }}</th>
                         </tr>
                         {% endfor %}
 
