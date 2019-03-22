@@ -10,7 +10,7 @@ import json
 # Create your views here.
 def index(request):
 	template='index.html'
-	results=Producto.objects.all()
+	results=Producto.objects.all().addAll(Venta.objects.all())
 	jsondata = serializers.serialize('json',results)
 	context={
 		'results':results,
@@ -29,7 +29,7 @@ def productos(request):
 	return render(request,template,context)
 
 def getdata(request):
-	results=Producto.objects.all()
+	results=Producto.objects.all().addAll(Venta.objects.all())
 	jsondata = serializers.serialize('json',results)
 	return HttpResponse(jsondata)
 
