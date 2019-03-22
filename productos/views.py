@@ -6,8 +6,18 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 
+# Create your views here.
 def index(request):
-    return render(request, 'index.html')
+	template='index.html'
+	results=Producto.objects.all()
+	context={
+		'results':results,
+	}
+	return render(request,template,context)
+
+def base_layout(request):
+	template='base.html'
+	return render(request,template)
 
 def ProductoList(request):
     queryset = Producto.objects.all()
