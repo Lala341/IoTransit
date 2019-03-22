@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls import url
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pwa.urls')),
     path(r'', include('productos.urls')),
-    url(r'^service-worker.js', (TemplateView.as_view(template_name="productos/serviceworker.js",content_type='text/javascript',)), name='serviceworker.js'),
+    url(r'^service-worker.js', ( TemplateView.as_view(template_name="productos/serviceworker.js",content_type='text/javascript',)), name='serviceworker.js'),
 
 ]
