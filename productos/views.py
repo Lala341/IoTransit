@@ -10,9 +10,12 @@ import json
 # Create your views here.
 def index(request):
 	template='index.html'
-	results=Producto.objects.all().addAll(Venta.objects.all())
-	jsondata = serializers.serialize('json',results)
-	context={
+	results=Producto.objects.all()
+    ventas=Venta.objects.all()
+	jsondata1 = serializers.serialize('json',results)
+    jsondata2 = serializers.serialize('json',ventas)
+	jsondata= jsondata1.concat(jsondata2)
+    context={
 		'results':results,
 		'jsondata':jsondata,
 	}
@@ -30,8 +33,11 @@ def productos(request):
 
 def getdata(request):
 	results=Producto.objects.all().addAll(Venta.objects.all())
-	jsondata = serializers.serialize('json',results)
-	return HttpResponse(jsondata)
+	ventas=Venta.objects.all()
+	jsondata1 = serializers.serialize('json',results)
+    jsondata2 = serializers.serialize('json',ventas)
+	jsondata= jsondata1.concat(jsondata2)
+    return HttpResponse(jsondata)
 
 def base_layout(request):
 	template='base.html'
