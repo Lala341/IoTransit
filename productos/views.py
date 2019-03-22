@@ -4,16 +4,22 @@ from .forms import  ProductoForm, VentaForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
-
+from django.core import serializers
+from django.http import HttpResponse
+from . models import feed
 # Create your views here.
 def index(request):
 	template='index.html'
-	results=Producto.objects.all()
+	results=feed.objects.all()
 	context={
 		'results':results,
 	}
 	return render(request,template,context)
+
+def getdata(request):
+	results=feed.objects.all()
+	jsondata = serializers.serialize('json',results)
+	return HttpResponse(jsondata)
 
 def base_layout(request):
 	template='base.html'
