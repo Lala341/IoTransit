@@ -19,6 +19,8 @@ self.addEventListener('fetch', function(event) {
     if (requestUrl.origin === location.origin) {
       if ((requestUrl.pathname === '/')) {
         event.respondWith(caches.match('/base_layout'));
+        event.respondWith(caches.match('/productos'));
+
         return;
       }
     }
