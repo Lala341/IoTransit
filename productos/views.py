@@ -8,9 +8,9 @@ from django.core import serializers
 from django.http import HttpResponse
 import json
 # Create your views here.
-def index(request):
 
-	template='index.html'
+def index(request):
+    template='index.html'
     ventas= Venta.objects.all()
     results= Producto.objects.all()
     jsondata1 = serializers.serialize('json',results)
@@ -20,7 +20,7 @@ def index(request):
 		'results':results,
 		'jsondata':jsondata,
 	}
-	return render(request,template,context)
+    return render(request,template,context)
 
 def productos(request):
 	template='Producto/productos.html'
@@ -33,7 +33,8 @@ def productos(request):
 	return render(request,template,context)
 
 def getdata(request):
-	results=Producto.objects.all()
+
+    results=Producto.objects.all()
     ventas= Venta.objects.all()
     jsondata1 = serializers.serialize('json',results)
     jsondata2 = serializers.serialize('json',ventas)
