@@ -2,10 +2,11 @@ var cacheName = 'serviceWorker';
 var filesToCache = [
 '/',
 ];
+
 self.addEventListener('install', function(event) {
-  event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
+  console.log('Service Worker installing.');
+});
+
+self.addEventListener('activate', function(event) {
+  console.log('Service Worker activating.');
 });
