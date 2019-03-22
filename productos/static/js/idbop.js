@@ -33,16 +33,19 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 		    	if(field=='fields'){
 		    		feedsData=cursor.value[field];
 		    		for(var key in feedsData){
-		    			if(key =='title'){
+
+
+		    			if(key =='nombre'){
 		    				var title = '<h3>'+feedsData[key]+'</h3>';
 		    			}
-		    			if(key =='author'){
+		    			if(key =='cantidad'){
 		    				var author = feedsData[key];
 		    			}
-		    			if(key == 'body'){
+		    			if(key == 'tipo'){
 		    				var body = '<p>'+feedsData[key]+'</p>';
 		    			}
 		    		}
+            
 		    		post=post+'<br>'+title+'<br>'+author+'<br>'+body+'<br>';
 		    	}
 		    }
