@@ -8,8 +8,7 @@ urlpatterns = [
     url(r'^$', views.index,name='index'),
     url(r'base_layout',views.base_layout,name='base_layout'),
     url(r'getdata',views.getdata,name='getdata'),
-    url(r'productos',views.productos,name='productos'),
-
+    
     url(r'^productos/', views.ProductoList,name='productoList'),
     url(r'^productocreate/$', csrf_exempt(views.ProductoCreate), name='productoCreate'),
     url(r'^productoupdate/(?P<pk>\d+)/$', csrf_exempt(views.ProductoUpdate), name='productoUpdate'),
