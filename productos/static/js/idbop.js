@@ -1,14 +1,14 @@
-var dbPromise = idb.open('feeds-db', 5, function(upgradeDb) {
-	upgradeDb.createObjectStore('feeds',{keyPath:'pk'});
+var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
+	upgradeDb.createObjectStore('productos',{keyPath:'pk'});
 });
 
 
 	//collect latest post from server and store in idb
-	fetch('http://127.0.0.1:8000/getdata').then(function(response){
+	fetch('http://172.24.41.227:8082/getdata').then(function(response){
 		return response.json();
 	}).then(function(jsondata){
 		dbPromise.then(function(db){
-			var tx = db.transaction('feeds', 'readwrite');
+			var tx = db.transaction('productos', 'readwrite');
 	  		var feedsStore = tx.objectStore('feeds');
 	  		for(var key in jsondata){
 	  			if (jsondata.hasOwnProperty(key)) {
@@ -21,7 +21,7 @@ var dbPromise = idb.open('feeds-db', 5, function(upgradeDb) {
 	//retrive data from idb and display on page
 	var post="";
 	dbPromise.then(function(db){
-		var tx = db.transaction('feeds', 'readonly');
+		var tx = db.transaction('productos', 'readonly');
   		var feedsStore = tx.objectStore('feeds');
   		return feedsStore.openCursor();
 	}).then(function logItems(cursor) {
