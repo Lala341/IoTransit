@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pwa.urls')),
     path(r'', include('productos.urls')),
+    url(r'^service-worker.js', (TemplateView.as_view(template_name="productos/serviceworker.js",content_type='text/javascript',)), name='serviceworker.js'),
 
 ]
