@@ -95,6 +95,7 @@ def VentaCreate(request):
 
     return render(request, 'Venta/ventaCreate.html', context)
 
-def base_layout(request):
-	template='productos/base.html'
-	return render(request,template)
+def serviceworker(request, js):
+      template = get_template('serviceworker.js')
+      html = template.render()
+      return HttpResponse(html, content_type="application/x-javascript")
