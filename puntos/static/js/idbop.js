@@ -1,5 +1,5 @@
-var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
-	upgradeDb.createObjectStore('productos',{keyPath:'pk'});
+var dbPromise = idb.open('puntos-db', 5, function(upgradeDb) {
+	upgradeDb.createObjectStore('puntos',{keyPath:'pk'});
 });
 
 
@@ -8,8 +8,8 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 		return response.json();
 	}).then(function(jsondata){
 		dbPromise.then(function(db){
-			var tx = db.transaction('productos', 'readwrite');
-	  		var feedsStore = tx.objectStore('productos');
+			var tx = db.transaction('puntos', 'readwrite');
+	  		var feedsStore = tx.objectStore('puntos');
 	  		for(var key in jsondata){
 	  			if (jsondata.hasOwnProperty(key)) {
 			    	feedsStore.put(jsondata[key]);
@@ -21,8 +21,8 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 	//retrive data from idb and display on page
 	var post="";
 	dbPromise.then(function(db){
-		var tx = db.transaction('productos', 'readonly');
-  		var feedsStore = tx.objectStore('productos');
+		var tx = db.transaction('puntos', 'readonly');
+  		var feedsStore = tx.objectStore('puntos');
   		return feedsStore.openCursor();
 	}).then(function logItems(cursor) {
 		  if (!cursor) {
@@ -45,7 +45,7 @@ var dbPromise = idb.open('productos-db', 5, function(upgradeDb) {
 		    				var body = '<p>'+feedsData[key]+'</p>';
 		    			}
 		    		}
-            
+
 		    		post=post+'<br>'+title+'<br>'+author+'<br>'+body+'<br>';
 		    	}
 		    }

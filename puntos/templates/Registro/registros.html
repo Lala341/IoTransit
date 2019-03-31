@@ -4,14 +4,12 @@
 <div class="content">
     <div class="">
         <div class="page-header-title">
-            <h4 class="page-title">Productos Registrados</h4>
-
+            <h4 class="page-title">Registros</h4>
             <div style="text-align:right;">
                 <button type="button" class="btn btn-success waves-effect waves-light"
-                        onClick=" window.location.href='/productocreate' " style="text-align:center;">+
+                        onClick=" window.location.href='/registrocreate' " style="text-align:center;">+
                 </button>
             </div>
-
         </div>
     </div>
 
@@ -23,39 +21,22 @@
 
             <div class="panel panel-default">
                 <div class="panel-body">
+
                     <table class="table table-hover">
                         <thead>
                         <tr style="color:#0E2EB0">
-                            <th>Nombre</th>
+                            <th>Punto</th>
                             <th>Cantidad</th>
-                            <th>Valor</th>
-                            <th>Unidad</th>
-                            <th>Tipo</th>
-                            <th>
-
-
-                            </th>
-
+                            <th>Fecha</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        {% for producto in producto_list %}
+                        {% for registro in registro_list %}
                         <tr>
-                            <td>{{ producto.nombre }}</td>
-                            <td>{{ producto.cantidad }}</td>
-                            <td>{{ producto.valor }}</td>
-                            <td>{{ producto.unidad }}</td>
-                            <td>{{ producto.tipo }}</td>
-                            <td>
-                              <div style="text-align:right;">
-                                  <button type="button" class="btn btn-danger waves-effect waves-light"
-                                          onClick=" window.location.href='/productoupdate/{{producto.id}}' " style="text-align:center;">Edit
-                                  </button>
-                              </div>
-
-                            </td>
-
+                            <th>{{ registro.punto.nombre }}</th>
+                            <th>{{ registro.cantidad }}</th>
+                            <th>{{ registro.fecha }}</th>
                         </tr>
                         {% endfor %}
 
@@ -74,5 +55,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}
