@@ -29,7 +29,7 @@ class PuntoForm(forms.ModelForm):
 
 class RegistroForm(forms.ModelForm):
     class Meta:
-        model = Venta
+        model = Registro
         fields = [
             'punto',
             'cantidad',
